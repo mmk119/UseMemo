@@ -75,5 +75,4 @@ Note: we removed `<StrictMode>` from `main.jsx`. In development it runs useMemo 
 ## Team
 
 - Mohammad Kassem
--
--
+- Ali Al Abdallah
