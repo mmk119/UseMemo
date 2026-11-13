@@ -1,0 +1,263 @@
+:root {
+  --bg: #f4f4f2;
+  --panel: #ffffff;
+  --text: #222;
+  --muted: #777;
+  --border: #ddd;
+  --accent: #2b6cb0;
+  --green: #2f855a;
+  --green-bg: #e6f4ea;
+  --red: #c53030;
+  --red-bg: #fdeaea;
+}
+
+body.dark {
+  --bg: #1b1d21;
+  --panel: #24272c;
+  --text: #e4e4e4;
+  --muted: #9a9a9a;
+  --border: #3a3e45;
+  --accent: #63a4e8;
+  --green: #68d391;
+  --green-bg: #1f3a2b;
+  --red: #fc8181;
+  --red-bg: #45262a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 15px;
+}
+
+h1, h2, p {
+  margin: 0;
+}
+
+button, input {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--panel);
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+button.link {
+  border: none;
+  padding: 0;
+  background: none;
+  color: var(--accent);
+}
+
+input {
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--panel);
+}
+
+code {
+  font-family: Consolas, monospace;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.app {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 22px;
+}
+
+.card {
+  padding: 14px 16px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.card h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.card-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+/* demo panel */
+.demo-panel {
+  padding: 14px 16px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.memo-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.memo-switch input {
+  width: 18px;
+  height: 18px;
+}
+
+.status {
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.status.fast {
+  background: var(--green-bg);
+  color: var(--green);
+}
+
+.status.slow {
+  background: var(--red-bg);
+  color: var(--red);
+}
+
+/* limit buttons */
+.limit-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.limit-buttons button.selected {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* stats */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 32px;
+  padding: 10px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.stats div {
+  display: flex;
+  flex-direction: column;
+}
+
+.stats span {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.stats strong {
+  font-size: 18px;
+}
+
+/* checker + history */
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.checker-row {
+  display: flex;
+  gap: 8px;
+}
+
+.checker-row input {
+  flex: 1;
+  min-width: 0;
+}
+
+.answer {
+  margin-top: 10px;
+}
+
+.yes {
+  color: var(--green);
+}
+
+.no {
+  color: var(--red);
+}
+
+.history {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.history li {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+/* list of primes */
+.prime-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 4px 12px;
+  font-family: Consolas, monospace;
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .app {
+    padding: 16px;
+  }
+
+  .two-columns {
+    grid-template-columns: 1fr;
+  }
+}
